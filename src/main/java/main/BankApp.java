@@ -1,6 +1,7 @@
+package main;
 import client.ConsoleApp;
 
-public class App {
+public class BankApp {
 	
 	public static void main(String[] args) {
 		
