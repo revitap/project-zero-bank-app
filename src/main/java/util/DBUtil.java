@@ -1,4 +1,4 @@
-package common.util;
+package util;
 
 import java.io.FileInputStream;
 import java.sql.Connection;

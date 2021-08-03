@@ -1,5 +1,6 @@
 package client;
 
+import entity.User;
 import java.util.Scanner;
 
 public class ConsoleApp {
@@ -8,47 +9,58 @@ public class ConsoleApp {
 		
 		//show menu
 		showMenu();
-		
+
 		System.out.println("Enter Action: ");
 		Scanner input = new Scanner(System.in);
 		String choice = input.next();
 		
 		switch (choice) {
-		case 1:
-			
+		case "Login":
+			loginForm(input);
 			break;
-			
+		case "Register":
+			registerForm(input);
+			break;
 		default:
 			break;
 		}
 		
-		listView();
-		
+
 		input.close();
 //		searchView();
 //		addView();
 //		updateView();
 //		deleteView();
 	}
-	
-	private void showMenu() {
-		//show menu
-		System.out.println("1.List");
-		System.out.println("2.Search");
-		System.out.println("3.Add");
-		System.out.println("4.Update");
-		System.out.println("5.Delete");		
+
+	public void showMenu() {
+		System.out.println("1. Login");
+		System.out.println("2. Register");
+	}
+
+	public void loginForm(Scanner input) {
+		User newUser = new User();
+
+		System.out.print("User Id: ");
+		String id = input.next();
+
+
+		System.out.print("Password: ");
+		String password = input.next();
+
+
+	}
+
+	public void registerForm(Scanner input) {
+		System.out.print("Enter first name: ");
+		String firstName = input.next();
+
+		System.out.print("Enter last name: ");
+		String lastName = input.next();
+
+		String usertype = "customer";
+
 	}
 	
-	private void listView() {
-		
-		ProductService service = new ProductService();
-		List<Product> products = service.findAll();		
-		//header
-		for(Product p : products) {
-			System.out.println(p.getId() + " | "+p.getTitle());
-		}
-		//data
-	}
 
 }
